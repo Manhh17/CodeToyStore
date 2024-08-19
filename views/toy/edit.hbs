@@ -1,0 +1,89 @@
+<style>
+   .div_center {
+      text-align: center;
+   }
+
+   .btnSend {
+      display: block;
+      margin: auto;
+      width: 20%;
+      margin-top: 50px;
+      padding: 10px 0;
+      background: #6fd649;
+      color: #fff;
+      border: 0;
+      outline: none;
+      font-size: 18px;
+      border-radius: 4px;
+      cursor: pointer;
+      box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+      margin: auto;
+      height: 40px;
+   }
+</style>
+
+
+{{!-- <form action="/toy/edit/{{ toy._id }}" method="post">
+   <h1>Edit new Toy</h1>
+   Toy name: <input type="text" name="name" id="" required value="{{ toy.name }}">
+   <br><br>
+   Toy description: <input type="text" name="description" id="" required value="{{ toy.description }}" >
+   <br><br>
+   Toy price: <input type="text" name="price" id="" required value="{{ toy.price }}">
+   <br><br>
+   Toy image: <input type="url" name="image" id="" required value="{{ toy.image }}">
+   <img src="{{ toy.image }}" alt="" width="100" height="100">
+   <br><br>
+   Toy brand: <br>
+   <select name="brand">
+      {{#each brands }}
+      <option value="{{ _id }}"> {{ name }}</option>
+      {{/each}}
+   </select>
+   <br><br>
+   <input type="submit" value="Add">
+</form> --}}
+
+<div class="row" style="min-height: 550px;">
+   <div class="col-md-8 mx-auto">
+      <form action="/toy/edit/{{ toy._id }}" method="POST">
+         <div class="card">
+            <div class="card-body">
+               <h3 class="card-title" style="text-transform:none; text-align:center">Edit new Toy</h3>
+               <div class="form-group">
+                  <label for="greeting"> Toy name:</label>
+                  <input type="text"  name="name" class="form-control" value="{{ toy.name }}">
+               </div>
+
+               <div class="form-group">
+                  <label for="firstline">Toy description:</label>
+                  <input type="text"  name="description" class="form-control" value="{{ toy.description }}">
+               </div>
+
+               <div class="form-group">
+                  <label for="body">Toy price:</label>
+                  <input type="text"  name="price" class="form-control" value="{{ toy.price }}">
+               </div>
+
+               <div class="form-group">
+                  <label for="button">Toy image:</label>
+                  <input type="url" id="button" name="image" class="form-control" value="{{ toy.image }}">
+                  <img src="{{ toy.image }}" alt="" width="100" height="100">
+               </div>
+
+               <div class="form-group">
+                  <label for="">Toy brand:</label>
+                  <select name="brand" class="form-control">
+                     {{#each brands }}
+                     <option value="{{ _id }}"> {{ name }}</option>
+                     {{/each}}
+                  </select>
+               </div>
+               <div class="form-group">
+                  <button type="submit" class="btn btn-primary btnSend">Update</button>
+               </div>
+            </div>
+         </div>
+      </form>
+   </div>
+</div>
