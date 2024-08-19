@@ -1,76 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <title>{{title}}</title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <style>
-    html, body {
-    height: 100%;
-    margin: 0;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        .navbar-custom {
+            background-color: #343a40;
+        }
 
-    /* Custom styles for the navigation bar */
-    .navbar-custom {
-      background-color: #343a40; /* Dark gray background, you can change this */
-    }
-    .navbar-custom .navbar-nav .nav-link {
-      color: #f8f9fa; /* Light color for the nav links, you can change this */
-    }
-    .navbar-custom .navbar-nav .nav-link:hover {
-      color: #adb5bd; /* Color for the nav links on hover, you can change this */
-    }
-    /* Custom styles for the footer */
-    .footer-custom {
-      background-color: #343a40; /* To match the navbar */
-      color: #f8f9fa; /* Light text color for the footer */
-      padding: 1rem 0; /* Padding for the footer */
-    }
-  </style>
+        .navbar-custom .navbar-brand {
+            color: #f8f9fa;
+        }
+
+        .navbar-custom .navbar-nav .nav-link {
+            color: #f8f9fa;
+        }
+
+        .navbar-custom .navbar-nav .nav-link:hover {
+            color: #adb5bd;
+        }
+
+        .footer-custom {
+            background-color: #343a40;
+            color: #f8f9fa;
+            padding: 1rem 0;
+        }
+
+        .navbar-nav .nav-link.h1 {
+            font-size: 1.25rem;
+        }
+
+        .navbar-nav .nav-link.h1.active {
+            color: #adb5bd;
+        }
+    </style>
 </head>
 
 <body>
-  <!-- Navigation bar (top) with Bootstrap classes for styling -->
-  <nav class="navbar navbar-expand-lg navbar-custom mb-5">
-    <div class="container-fluid justify-content-end">
-      <!-- Navbar content on the right -->
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link h1" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link h1" href="/toy">Toy</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link h1" href="/brand">Brand</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link h1" href="/toy/customer">Customer site</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
 
-  <!-- The container for the rest of the page content -->
-  {{!-- <div class="container col-md-12 text-center"> --}}
+    <!-- Navigation bar (top) -->
+    <nav class="navbar navbar-expand-lg navbar-custom mb-5">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Toy Shop</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link h1" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link h1 active" href="/toy">Toy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link h1" href="/brand">Brand</a>
+                    </li>
+                </ul>
+                <!-- Search form -->
+                <form class="d-flex" action="/toy/search" method="POST">
+                    <input class="form-control me-2" type="search" placeholder="Search for toys" aria-label="Search"
+                        name="keyword">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- The container for the rest of the page content -->
     {{{body}}}
-  {{!-- </div> --}}
 
-  <!-- Footer (bottom) with Bootstrap classes for styling -->
-  <footer class="footer-custom text-center mt-auto">
-    <div class="container">
-      The end of the web - 2023
-    </div>
-  </footer>
+    <!-- Footer -->
+    <footer class="footer-custom text-center mt-auto">
+        <div class="container">
+            The end of the web - 2024
+        </div>
+    </footer>
 
-  <!-- Bootstrap JS, Popper.js, and jQuery -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-9aIt2nRpCQb6l/6n7pJ4w9F5AVds4P7hBereFUVmUMbD5AbmDh20aK3wXlr/3en5"
-    crossorigin="anonymous"></script>
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-9aIt2nRpCQb6l/6n7pJ4w9F5AVds4P7hBereFUVmUMbD5AbmDh20aK3wXlr/3en5"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
